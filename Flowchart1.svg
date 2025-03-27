@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="503pt" height="579pt" viewBox="0.00 0.00 502.82 578.60">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 574.6)">
+<title>PreprocessingFlowchart</title>
+<text text-anchor="middle" x="247.41" y="-550.4" font-family="Times,serif" font-size="18.00">Flowchart 1: Data Acquisition and Preprocessing</text>
+<!-- Load -->
+<g id="node1" class="node">
+<title>Load</title>
+<polygon fill="khaki" stroke="black" points="286.1,-541 174.07,-541 145.25,-505 257.28,-505 286.1,-541"/>
+<text text-anchor="middle" x="215.68" y="-520" font-family="Times,serif" font-size="10.00">Load CSV Data</text>
+</g>
+<!-- Check -->
+<g id="node2" class="node">
+<title>Check</title>
+<polygon fill="lightgrey" stroke="black" points="253.82,-468 177.54,-468 177.54,-432 253.82,-432 253.82,-468"/>
+<text text-anchor="middle" x="215.68" y="-453" font-family="Times,serif" font-size="10.00">Check Missing</text>
+<text text-anchor="middle" x="215.68" y="-441" font-family="Times,serif" font-size="10.00">&amp; Duplicates</text>
+</g>
+<!-- Load&#45;&gt;Check -->
+<g id="edge1" class="edge">
+<title>Load-&gt;Check</title>
+<path fill="none" stroke="black" d="M215.68,-504.81C215.68,-497.23 215.68,-488.1 215.68,-479.54"/>
+<polygon fill="black" stroke="black" points="219.18,-479.54 215.68,-469.54 212.18,-479.54 219.18,-479.54"/>
+</g>
+<!-- Encode -->
+<g id="node3" class="node">
+<title>Encode</title>
+<polygon fill="lightgrey" stroke="black" points="256.44,-395 174.92,-395 174.92,-359 256.44,-359 256.44,-395"/>
+<text text-anchor="middle" x="215.68" y="-380" font-family="Times,serif" font-size="10.00">Encode 'Gender'</text>
+<text text-anchor="middle" x="215.68" y="-368" font-family="Times,serif" font-size="10.00">(if needed)</text>
+</g>
+<!-- Check&#45;&gt;Encode -->
+<g id="edge2" class="edge">
+<title>Check-&gt;Encode</title>
+<path fill="none" stroke="black" d="M215.68,-431.81C215.68,-424.23 215.68,-415.1 215.68,-406.54"/>
+<polygon fill="black" stroke="black" points="219.18,-406.54 215.68,-396.54 212.18,-406.54 219.18,-406.54"/>
+</g>
+<!-- VerifyImpute -->
+<g id="node4" class="node">
+<title>VerifyImpute</title>
+<polygon fill="lightgrey" stroke="black" points="273.66,-322 157.7,-322 157.7,-286 273.66,-286 273.66,-322"/>
+<text text-anchor="middle" x="215.68" y="-307" font-family="Times,serif" font-size="10.00">Verify Numeric Features</text>
+<text text-anchor="middle" x="215.68" y="-295" font-family="Times,serif" font-size="10.00">(Impute if necessary)</text>
+</g>
+<!-- Encode&#45;&gt;VerifyImpute -->
+<g id="edge3" class="edge">
+<title>Encode-&gt;VerifyImpute</title>
+<path fill="none" stroke="black" d="M215.68,-358.81C215.68,-351.23 215.68,-342.1 215.68,-333.54"/>
+<polygon fill="black" stroke="black" points="219.18,-333.54 215.68,-323.54 212.18,-333.54 219.18,-333.54"/>
+</g>
+<!-- Scale -->
+<g id="node5" class="node">
+<title>Scale</title>
+<polygon fill="lightgreen" stroke="black" points="267.83,-249 163.52,-249 163.52,-213 267.83,-213 267.83,-249"/>
+<text text-anchor="middle" x="215.68" y="-234" font-family="Times,serif" font-size="10.00">Scale Features</text>
+<text text-anchor="middle" x="215.68" y="-222" font-family="Times,serif" font-size="10.00">(MinMaxScaler [0,1])</text>
+</g>
+<!-- VerifyImpute&#45;&gt;Scale -->
+<g id="edge4" class="edge">
+<title>VerifyImpute-&gt;Scale</title>
+<path fill="none" stroke="black" d="M215.68,-285.81C215.68,-278.23 215.68,-269.1 215.68,-260.54"/>
+<polygon fill="black" stroke="black" points="219.18,-260.54 215.68,-250.54 212.18,-260.54 219.18,-260.54"/>
+</g>
+<!-- OriginalEDA -->
+<g id="node9" class="node">
+<title>OriginalEDA</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="494.82,-541 343.47,-541 304.53,-505 455.89,-505 494.82,-541"/>
+<text text-anchor="middle" x="399.68" y="-520" font-family="Times,serif" font-size="10.00">Original Data for EDA</text>
+</g>
+<!-- VerifyImpute&#45;&gt;OriginalEDA -->
+<g id="edge8" class="edge">
+<title>VerifyImpute-&gt;OriginalEDA</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M232.15,-322.27C242.03,-332.76 254.76,-346.49 265.68,-359 306.89,-406.23 352.88,-463.14 378.84,-495.7"/>
+<polygon fill="black" stroke="black" points="376.01,-497.76 384.98,-503.41 381.49,-493.4 376.01,-497.76"/>
+</g>
+<!-- Split -->
+<g id="node6" class="node">
+<title>Split</title>
+<polygon fill="lightyellow" stroke="black" points="215.68,-176 136.63,-144 215.68,-112 294.72,-144 215.68,-176"/>
+<text text-anchor="middle" x="215.68" y="-147" font-family="Times,serif" font-size="10.00">Stratified</text>
+<text text-anchor="middle" x="215.68" y="-135" font-family="Times,serif" font-size="10.00">Train/Test Split</text>
+</g>
+<!-- Scale&#45;&gt;Split -->
+<g id="edge5" class="edge">
+<title>Scale-&gt;Split</title>
+<path fill="none" stroke="black" d="M215.68,-212.8C215.68,-205.43 215.68,-196.47 215.68,-187.51"/>
+<polygon fill="black" stroke="black" points="219.18,-187.79 215.68,-177.79 212.18,-187.79 219.18,-187.79"/>
+</g>
+<!-- TrainData -->
+<g id="node7" class="node">
+<title>TrainData</title>
+<polygon fill="palegreen" stroke="black" points="209.35,-64 42.84,-64 0,0 166.52,0 209.35,-64"/>
+<text text-anchor="middle" x="104.68" y="-35" font-family="Times,serif" font-size="10.00">Scaled Training Data</text>
+<text text-anchor="middle" x="104.68" y="-23" font-family="Times,serif" font-size="10.00">(X_train, y_train)</text>
+</g>
+<!-- Split&#45;&gt;TrainData -->
+<g id="edge6" class="edge">
+<title>Split-&gt;TrainData</title>
+<path fill="none" stroke="black" d="M193.21,-120.74C179.17,-106.82 160.68,-88.5 144.24,-72.21"/>
+<polygon fill="black" stroke="black" points="147,-70.02 137.43,-65.46 142.07,-74.99 147,-70.02"/>
+<text text-anchor="middle" x="173.92" y="-85" font-family="Times,serif" font-size="10.00"> 80%</text>
+</g>
+<!-- TestData -->
+<g id="node8" class="node">
+<title>TestData</title>
+<polygon fill="palegreen" stroke="black" points="427.75,-64 268.55,-64 227.6,0 386.8,0 427.75,-64"/>
+<text text-anchor="middle" x="327.68" y="-35" font-family="Times,serif" font-size="10.00">Scaled Testing Data</text>
+<text text-anchor="middle" x="327.68" y="-23" font-family="Times,serif" font-size="10.00">(X_test, y_test)</text>
+</g>
+<!-- Split&#45;&gt;TestData -->
+<g id="edge7" class="edge">
+<title>Split-&gt;TestData</title>
+<path fill="none" stroke="black" d="M238.34,-120.74C252.51,-106.82 271.16,-88.5 287.76,-72.21"/>
+<polygon fill="black" stroke="black" points="289.95,-74.96 294.63,-65.46 285.04,-69.97 289.95,-74.96"/>
+<text text-anchor="middle" x="285.45" y="-85" font-family="Times,serif" font-size="10.00"> 20%</text>
+</g>
+</g>
+</svg>

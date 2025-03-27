@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1638pt" height="212pt" viewBox="0.00 0.00 1637.59 211.88">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 207.88)">
+<title>QSVMWorkflow</title>
+<text text-anchor="middle" x="814.79" y="-183.68" font-family="Times,serif" font-size="18.00">Diagram 2: QSVM Workflow</text>
+<!-- InputVec -->
+<g id="node1" class="node">
+<title>InputVec</title>
+<polygon fill="palegreen" stroke="black" points="199,-174.28 40.72,-174.28 0,-110.28 158.28,-110.28 199,-174.28"/>
+<text text-anchor="middle" x="99.5" y="-145.28" font-family="Times,serif" font-size="10.00">Scaled Input Vector</text>
+<text text-anchor="middle" x="99.5" y="-133.28" font-family="Times,serif" font-size="10.00">x</text>
+</g>
+<!-- FeatureMap -->
+<g id="node2" class="node">
+<title>FeatureMap</title>
+<path fill="lightsteelblue" stroke="black" d="M248,-124.28C248,-124.28 330.53,-124.28 330.53,-124.28 336.53,-124.28 342.53,-130.28 342.53,-136.28 342.53,-136.28 342.53,-148.28 342.53,-148.28 342.53,-154.28 336.53,-160.28 330.53,-160.28 330.53,-160.28 248,-160.28 248,-160.28 242,-160.28 236,-154.28 236,-148.28 236,-148.28 236,-136.28 236,-136.28 236,-130.28 242,-124.28 248,-124.28"/>
+<text text-anchor="middle" x="289.26" y="-145.28" font-family="Times,serif" font-size="10.00">Quantum Feature Map</text>
+<text text-anchor="middle" x="289.26" y="-133.28" font-family="Times,serif" font-size="10.00">(e.g., ZZFeatureMap)</text>
+</g>
+<!-- InputVec&#45;&gt;FeatureMap -->
+<g id="edge1" class="edge">
+<title>InputVec-&gt;FeatureMap</title>
+<path fill="none" stroke="black" d="M179.04,-142.28C194.1,-142.28 209.71,-142.28 224.25,-142.28"/>
+<polygon fill="black" stroke="black" points="224.14,-145.78 234.14,-142.28 224.14,-138.78 224.14,-145.78"/>
+</g>
+<!-- QuantumState -->
+<g id="node3" class="node">
+<title>QuantumState</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="5,2" cx="433.06" cy="-142.28" rx="53.54" ry="22.63"/>
+<text text-anchor="middle" x="433.06" y="-145.28" font-family="Times,serif" font-size="10.00">Quantum State</text>
+<text text-anchor="middle" x="433.06" y="-133.28" font-family="Times,serif" font-size="10.00">|ψ(x)⟩</text>
+</g>
+<!-- FeatureMap&#45;&gt;QuantumState -->
+<g id="edge2" class="edge">
+<title>FeatureMap-&gt;QuantumState</title>
+<path fill="none" stroke="black" d="M342.66,-142.28C350.91,-142.28 359.51,-142.28 367.98,-142.28"/>
+<polygon fill="black" stroke="black" points="367.89,-145.78 377.89,-142.28 367.89,-138.78 367.89,-145.78"/>
+</g>
+<!-- FidelityComp -->
+<g id="node4" class="node">
+<title>FidelityComp</title>
+<polygon fill="lightsteelblue" stroke="black" points="693.59,-164.28 591.75,-164.28 591.75,-120.28 693.59,-120.28 693.59,-164.28"/>
+<text text-anchor="middle" x="642.67" y="-151.28" font-family="Times,serif" font-size="10.00">Fidelity Computation</text>
+<text text-anchor="middle" x="642.67" y="-139.28" font-family="Times,serif" font-size="10.00">|⟨ψ(x)|ψ(x')⟩|²</text>
+<text text-anchor="middle" x="642.67" y="-127.28" font-family="Times,serif" font-size="10.00">(Sampler Primitive)</text>
+</g>
+<!-- QuantumState&#45;&gt;FidelityComp -->
+<g id="edge3" class="edge">
+<title>QuantumState-&gt;FidelityComp</title>
+<path fill="none" stroke="black" d="M486.99,-142.28C515.31,-142.28 550.33,-142.28 579.89,-142.28"/>
+<polygon fill="black" stroke="black" points="579.83,-145.78 589.83,-142.28 579.83,-138.78 579.83,-145.78"/>
+<text text-anchor="middle" x="539.18" y="-157.28" font-family="Times,serif" font-size="10.00">Compute overlap</text>
+<text text-anchor="middle" x="539.18" y="-145.28" font-family="Times,serif" font-size="10.00">with other states</text>
+</g>
+<!-- KernelMatrix -->
+<g id="node5" class="node">
+<title>KernelMatrix</title>
+<path fill="khaki" stroke="black" d="M869.42,-160.28C869.42,-162.49 844.18,-164.28 813.1,-164.28 782.02,-164.28 756.78,-162.49 756.78,-160.28 756.78,-160.28 756.78,-124.28 756.78,-124.28 756.78,-122.08 782.02,-120.28 813.1,-120.28 844.18,-120.28 869.42,-122.08 869.42,-124.28 869.42,-124.28 869.42,-160.28 869.42,-160.28"/>
+<path fill="none" stroke="black" d="M869.42,-160.28C869.42,-158.08 844.18,-156.28 813.1,-156.28 782.02,-156.28 756.78,-158.08 756.78,-160.28"/>
+<text text-anchor="middle" x="813.1" y="-145.28" font-family="Times,serif" font-size="10.00">Quantum Kernel Matrix</text>
+<text text-anchor="middle" x="813.1" y="-133.28" font-family="Times,serif" font-size="10.00">K(x, x')</text>
+</g>
+<!-- FidelityComp&#45;&gt;KernelMatrix -->
+<g id="edge4" class="edge">
+<title>FidelityComp-&gt;KernelMatrix</title>
+<path fill="none" stroke="black" d="M693.75,-142.28C709.9,-142.28 728.06,-142.28 745.22,-142.28"/>
+<polygon fill="black" stroke="black" points="744.81,-145.78 754.81,-142.28 744.81,-138.78 744.81,-145.78"/>
+</g>
+<!-- SVMTraining -->
+<g id="node6" class="node">
+<title>SVMTraining</title>
+<polygon fill="lightsteelblue" stroke="black" points="1027.21,-103.28 932.61,-103.28 932.61,-67.28 1027.21,-67.28 1027.21,-103.28"/>
+<text text-anchor="middle" x="979.91" y="-88.28" font-family="Times,serif" font-size="10.00">Classical SVM</text>
+<text text-anchor="middle" x="979.91" y="-76.28" font-family="Times,serif" font-size="10.00">Training Algorithm</text>
+</g>
+<!-- KernelMatrix&#45;&gt;SVMTraining -->
+<g id="edge5" class="edge">
+<title>KernelMatrix-&gt;SVMTraining</title>
+<path fill="none" stroke="black" d="M869.78,-134.55C884.62,-131.59 900.46,-127.6 914.61,-122.28 923.71,-118.87 933.04,-114.25 941.66,-109.43"/>
+<polygon fill="black" stroke="black" points="943.22,-112.57 950.1,-104.51 939.7,-106.53 943.22,-112.57"/>
+</g>
+<!-- Predict -->
+<g id="node9" class="node">
+<title>Predict</title>
+<polygon fill="lightyellow" stroke="black" points="1380.16,-103.28 1331.6,-85.28 1380.16,-67.28 1428.72,-85.28 1380.16,-103.28"/>
+<text text-anchor="middle" x="1380.16" y="-82.28" font-family="Times,serif" font-size="10.00">Prediction</text>
+</g>
+<!-- KernelMatrix&#45;&gt;Predict -->
+<g id="edge10" class="edge">
+<title>KernelMatrix-&gt;Predict</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M868.11,-121.57C877.58,-117.07 887.11,-111.94 895.61,-106.28 905.3,-99.84 907.33,-97.35 914.61,-88.28 924.35,-76.16 919.08,-65.94 932.61,-58.28 1068.86,18.86 1267.42,-42.23 1345.68,-71.69"/>
+<polygon fill="black" stroke="black" points="1344.33,-74.92 1354.92,-75.24 1346.84,-68.38 1344.33,-74.92"/>
+<text text-anchor="middle" x="1097.84" y="-26.78" font-family="Times,serif" font-size="10.00">Support Vectors &amp; Kernel</text>
+</g>
+<!-- TrainedModel -->
+<g id="node7" class="node">
+<title>TrainedModel</title>
+<ellipse fill="lightblue" stroke="black" cx="1231.53" cy="-85.28" rx="63.07" ry="18"/>
+<text text-anchor="middle" x="1231.53" y="-82.28" font-family="Times,serif" font-size="10.00">Trained QSVC Model</text>
+</g>
+<!-- SVMTraining&#45;&gt;TrainedModel -->
+<g id="edge7" class="edge">
+<title>SVMTraining-&gt;TrainedModel</title>
+<path fill="none" stroke="black" d="M1027.57,-85.28C1063.89,-85.28 1114.99,-85.28 1156.83,-85.28"/>
+<polygon fill="black" stroke="black" points="1156.57,-88.78 1166.57,-85.28 1156.57,-81.78 1156.57,-88.78"/>
+</g>
+<!-- TrainedModel&#45;&gt;Predict -->
+<g id="edge9" class="edge">
+<title>TrainedModel-&gt;Predict</title>
+<path fill="none" stroke="black" d="M1294.72,-85.28C1302.69,-85.28 1310.84,-85.28 1318.78,-85.28"/>
+<polygon fill="black" stroke="black" points="1318.71,-88.78 1328.71,-85.28 1318.71,-81.78 1318.71,-88.78"/>
+</g>
+<!-- TestVec -->
+<g id="node8" class="node">
+<title>TestVec</title>
+<polygon fill="palegreen" stroke="black" points="194.96,-92.28 43.1,-92.28 4.03,-28.28 155.9,-28.28 194.96,-92.28"/>
+<text text-anchor="middle" x="99.5" y="-63.28" font-family="Times,serif" font-size="10.00">Scaled Test Vector</text>
+<text text-anchor="middle" x="99.5" y="-51.28" font-family="Times,serif" font-size="10.00">x_test</text>
+</g>
+<!-- TestVec&#45;&gt;FeatureMap -->
+<g id="edge8" class="edge">
+<title>TestVec-&gt;FeatureMap</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M179.1,-92.7C185.84,-95.57 192.55,-98.46 199,-101.28 211.94,-106.95 225.86,-113.24 238.76,-119.16"/>
+<polygon fill="black" stroke="black" points="236.93,-122.17 247.48,-123.18 239.86,-115.81 236.93,-122.17"/>
+</g>
+<!-- TestVec&#45;&gt;Predict -->
+<g id="edge11" class="edge">
+<title>TestVec-&gt;Predict</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M182.33,-71.13C359.62,-93.11 773.09,-135.77 895.61,-73.28 920.56,-60.56 907.96,-35.56 932.61,-22.28 1017.89,23.62 1053.63,-15.6 1150.47,-17.28 1214.55,-18.39 1234.12,-1.06 1294.6,-22.28 1319.23,-30.93 1342.66,-49.49 1358.58,-64.24"/>
+<polygon fill="black" stroke="black" points="1355.89,-66.5 1365.52,-70.9 1360.74,-61.45 1355.89,-66.5"/>
+</g>
+<!-- Output -->
+<g id="node10" class="node">
+<title>Output</title>
+<polygon fill="lightcoral" stroke="black" points="1629.59,-117.28 1499.25,-117.28 1465.72,-53.28 1596.06,-53.28 1629.59,-117.28"/>
+<text text-anchor="middle" x="1547.66" y="-88.28" font-family="Times,serif" font-size="10.00">Predicted Label</text>
+<text text-anchor="middle" x="1547.66" y="-76.28" font-family="Times,serif" font-size="10.00">y_pred</text>
+</g>
+<!-- Predict&#45;&gt;Output -->
+<g id="edge12" class="edge">
+<title>Predict-&gt;Output</title>
+<path fill="none" stroke="black" d="M1429.92,-85.28C1442.66,-85.28 1456.7,-85.28 1470.49,-85.28"/>
+<polygon fill="black" stroke="black" points="1470.47,-88.78 1480.47,-85.28 1470.47,-81.78 1470.47,-88.78"/>
+</g>
+<!-- TrainLabels -->
+<g id="node11" class="node">
+<title>TrainLabels</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="895.61,-64.28 764.35,-64.28 730.59,-0.28 861.85,-0.28 895.61,-64.28"/>
+<text text-anchor="middle" x="813.1" y="-35.28" font-family="Times,serif" font-size="10.00">Training Labels</text>
+<text text-anchor="middle" x="813.1" y="-23.28" font-family="Times,serif" font-size="10.00">y_train</text>
+</g>
+<!-- TrainLabels&#45;&gt;SVMTraining -->
+<g id="edge6" class="edge">
+<title>TrainLabels-&gt;SVMTraining</title>
+<path fill="none" stroke="black" d="M892.16,-57.39C902.09,-60.58 912.1,-63.8 921.62,-66.86"/>
+<polygon fill="black" stroke="black" points="920.5,-70.17 931.09,-69.9 922.64,-63.51 920.5,-70.17"/>
+</g>
+</g>
+</svg>
